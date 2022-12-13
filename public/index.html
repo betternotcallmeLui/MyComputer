@@ -36,6 +36,8 @@
                 <li>Modelo del procesador: <span id="cpumodel"></span></li>
                 <li>Velocidad de los núcleos del procesador: <span id="core1"></span></li>
                 <li>Memoria usada: <span id="memory"></span> GB</li>
+                <li>Porcentaje usado de la memoria: <span id="porce"></span> %</li>
+                <canvas id="memory-chart" max-width="600px" max-height="600px"></canvas>
                 <li>Memoria total: <span id="disk"></span> GB</li>
                 <li>Sistema operativo de tu ordenador: <span id="sisoperativo"></span></li>
                 <li>Tiempo que tu sistema ha estado activo: <span id="timeact"></span> minutos</li>
@@ -56,7 +58,7 @@
         <a href="#header" class="up"><i class='bx bx-up-arrow-alt'></i></a>
     </footer>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
     <script src="./JS/index.js"></script>

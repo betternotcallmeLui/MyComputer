@@ -19,15 +19,64 @@ const typed = new Typed('.typed', {
     contentType: 'html', // 'html' o 'null' para texto sin formato
 });
 
+
+
 const socket = io();
+
+let chart = null;
+
 socket.on('usage', function (usage) {
-    document.getElementById('cpu').innerHTML = usage.cpu.length;
-    document.getElementById('cpumodel').innerHTML = usage.cpu[0].model;
-    document.getElementById('core1').innerHTML = usage.cpu[0].speed;
-    document.getElementById('memory').innerHTML = usage.memory.toFixed(3);
-    document.getElementById('disk').innerHTML = usage.disk.toFixed(3);
-    document.getElementById('sisoperativo').innerHTML = usage.sisoperativo
-    document.getElementById('timeact').innerHTML = usage.timeact.toFixed(0)
+
+    const memoryUsage = usage.memory.percentage;
+
+    if (!chart) {
+        chart = new Chart(document.getElementById('memory-chart'), {
+            type: 'horizontalBar',
+            data: {
+                datasets: [{
+                    label: 'Memoria usada',
+                    data: [memoryUsage],
+                    backgroundColor: '#00C2CB',
+                    borderColor: '#3498db',
+                    pointBackgroundColor: '#3498db',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#3498db',
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }]
+                }
+            }
+        });
+    } else {
+        chart.data.datasets[0].data.push(memoryUsage);
+        chart.update();
+    }
+
+    setInterval(() => {
+        if (chart) {
+            if (chart.data.datasets[0].data.length > 60) {
+                chart.data.datasets[0].data.shift();
+            }
+            chart.update();
+        }
+    }, 1000);
+
+    document.getElementById('cpu').innerHTML = usage.CPU.length;
+    document.getElementById('cpumodel').innerHTML = usage.CPU[0].model;
+    document.getElementById('core1').innerHTML = usage.CPU[0].speed;
+    document.getElementById('memory').innerHTML = usage.memory.used.toFixed(3);
+    document.getElementById('disk').innerHTML = usage.memory.total.toFixed(3);
+    document.getElementById('sisoperativo').innerHTML = usage.operatingSystem
+    document.getElementById('timeact').innerHTML = usage.uptime.toFixed(0)
     document.getElementById('ip-address').innerHTML = usage.ip;
-    document.getElementById('c-model').innerHTML = usage.model;
+    document.getElementById('c-model').innerHTML = usage.hostname;
+    document.getElementById('porce').innerHTML = usage.memory.percentage.toFixed(3);
 });

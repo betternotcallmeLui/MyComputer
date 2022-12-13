@@ -176,3 +176,7 @@ html, body{
     .up:hover{
         margin-bottom: 20px;
     }
+canvas{
+    width: 800px !important;
+    height: 400px !important;
+}
