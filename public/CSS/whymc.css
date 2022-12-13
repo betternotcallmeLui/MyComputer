@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    color: #001127;
+    background-color: #ffff;
+    font-family: 'Roboto', sans-serif;
+}
+/* Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #DFFEFF;
+    align-items: center;
+    box-shadow: 0px 0px 10px #3498db;
+}
+.title{
+    font-size: 26px;
+    font-weight: 500;
+    transition: 2s;
+}
+    .title:hover{
+        border-bottom: 1px solid #00C2CB;
+        padding-right: 20px;
+        color: #00C2CB;
+        padding-left: 20px;
+    }
+.btn{
+    text-decoration: none;
+    color: #001127;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+    border-radius: 16px;
+    transition: 0.7s;
+}
+    .btn:hover{
+        color: #3498db;
+        font-size: 30px;
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+.imglogo{
+    cursor: pointer;
+    width: 40px;
+    margin-right: 10px;
+    transition: 1s;
+}
+    .imglogo:hover{
+        width: 50px;
+    }
+.logodiv{
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    display: flex;
+}
+/* End of header */
+
+/* Content */
+.principalTitle{
+    font-size: 40px;
+    border-bottom: 1px solid rgba(0, 17, 39, 0.2);
+    padding-bottom: 40px;
+    margin: 50px;
+    font-weight: 500;
+}
+
+.principalContent{
+    color: #001127;
+    font-size: 18px;
+    margin: 50px auto;
+    width: 1000px;
+
+}
+.contentProblems{
+    padding-bottom: 20px;
+}
+.problemsTitle, .actTitle, .howWorksTitle{
+    color: #001127;
+    cursor: default;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s;
+}
+    .problemsTitle:hover, .actTitle:hover, .howWorksTitle:hover{
+        border-bottom: 1px solid #3498db;
+        color: #3498db;
+        padding-left: 2px;
+    }
+.problemsText, .actText, .howWorksText{
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.actList{
+    margin-top: 10px;
+    margin-left: 35px;
+}
+.actListOption{
+    margin-bottom: 10px;
+}
+.nodeSpan, .socketSpan, .osSpan{
+    text-decoration: none;
+    transition: 1s;
+}
+.nodeSpan{
+    color: #2b9348;
+}
+    .nodeSpan:hover{
+        border-bottom:1px solid #2b9348;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+.socketSpan{
+    color: black;
+}
+    .socketSpan:hover{
+        border-bottom:1px solid black;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+.osSpan{
+    color: #6a6a11;
+}
+    .osSpan:hover{
+        border-bottom:1px solid #6a6a11;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+/* End of content */
+
+
+/* Footer */
+.footer{
+    display: flex;
+    height: 80px;
+    border-top: 1px solid #001127;
+    align-items: center;
+    justify-content: center;
+}
+.footer p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.footer ul{
+    margin-left: 100px;
+    list-style: none;
+    display: flex;
+}
+.footer ul a{
+    font-size: 14px;
+    margin: 10px;
+    color: #001127;
+    text-decoration: none;
+    transition: 0.9s;
+}
+    .footer ul a:hover{
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+.footer .ig:hover{
+    color: palevioletred !important;
+    border-bottom: 1px solid palevioletred;
+}
+.footer .tw:hover{
+    color: #00C2CB !important;
+    border-bottom: 1px solid #00C2CB;
+}
+.footer .face:hover{
+    color: #3b5998 !important;
+    border-bottom: 1px solid #3b5998;
+}
+.footer .git:hover{
+    color: black;
+    border-bottom: 1px solid black;
+}
+.lui{
+    cursor: pointer;
+    transition: 0.7s;
+}
+    .lui:hover {
+        color: #3498db;
+        padding-right: 10px;
+    }
+.up{
+    margin-left: 100px;
+    font-size: 30px;
+    color: #001127;
+    margin-top: 8px;
+    transition: 1s;
+}
+    .up:hover{
+        margin-bottom: 20px;
+    }
+/* End of footer */
