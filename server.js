@@ -32,7 +32,7 @@ setInterval(() => {
 
         },
         operatingSystem: os.type(),
-        uptime: os.uptime(),
+        uptime: Math.round(os.uptime() / 60),
         hostname: os.hostname(),
         ip: ips,
     };
