@@ -28,7 +28,8 @@ setInterval(() => {
             total: os.totalmem() / 1024 / 1024 / 1024,
             free: os.freemem() / 1024 / 1024 / 1024,
             used: (os.totalmem() - os.freemem()) / 1024 / 1024 / 1024,
-            percentage: 100 - (os.freemem / os.totalmem) * 100,
+            percentage: (1 - (os.freemem / os.totalmem)) * 100,
+
         },
         operatingSystem: os.type(),
         uptime: os.uptime(),
